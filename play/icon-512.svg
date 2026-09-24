@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 108 108">
+    <!-- Background -->
+    <rect width="108" height="108" fill="#2E7D32"/>
+    <!-- Subtle grid of plug holes -->
+    <g fill="#276B2B">
+        <circle cx="18" cy="18" r="6"/>
+        <circle cx="54" cy="18" r="6"/>
+        <circle cx="90" cy="18" r="6"/>
+        <circle cx="18" cy="54" r="6"/>
+        <circle cx="90" cy="54" r="6"/>
+        <circle cx="18" cy="90" r="6"/>
+        <circle cx="54" cy="90" r="6"/>
+        <circle cx="90" cy="90" r="6"/>
+    </g>
+    <!-- Sprout in a plug, enlarged: no adaptive-icon safe zone needed on Play -->
+    <g transform="translate(54,54) scale(1.35) translate(-54,-51)">
+        <!-- Plug (net pot) -->
+        <circle cx="54" cy="72" r="13" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+        <!-- Stem -->
+        <path d="M54,58 L54,43" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+        <!-- Left leaf -->
+        <path d="M54,52 C52,42 44,36 34,36 C34,46 43,53 54,52 Z" fill="#FFFFFF"/>
+        <!-- Right leaf -->
+        <path d="M54,46 C56,36 64,30 74,30 C74,40 65,47 54,46 Z" fill="#FFFFFF"/>
+    </g>
+</svg>

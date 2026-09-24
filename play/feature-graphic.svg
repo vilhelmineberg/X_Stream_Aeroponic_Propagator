@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+    <!-- Background -->
+    <rect width="1024" height="500" fill="#2E7D32"/>
+    <!-- Subtle grid of plug holes -->
+    <g fill="#276B2B">
+        <circle cx="60" cy="60" r="26"/>
+        <circle cx="230" cy="60" r="26"/>
+        <circle cx="400" cy="60" r="26"/>
+        <circle cx="570" cy="60" r="26"/>
+        <circle cx="740" cy="60" r="26"/>
+        <circle cx="910" cy="60" r="26"/>
+        <circle cx="60" cy="250" r="26"/>
+        <circle cx="910" cy="250" r="26"/>
+        <circle cx="60" cy="440" r="26"/>
+        <circle cx="230" cy="440" r="26"/>
+        <circle cx="400" cy="440" r="26"/>
+        <circle cx="570" cy="440" r="26"/>
+        <circle cx="740" cy="440" r="26"/>
+        <circle cx="910" cy="440" r="26"/>
+    </g>
+    <!-- Sprout logo, left side -->
+    <g transform="translate(190,250) scale(3.4) translate(-54,-51)">
+        <circle cx="54" cy="72" r="13" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+        <path d="M54,58 L54,43" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+        <path d="M54,52 C52,42 44,36 34,36 C34,46 43,53 54,52 Z" fill="#FFFFFF"/>
+        <path d="M54,46 C56,36 64,30 74,30 C74,40 65,47 54,46 Z" fill="#FFFFFF"/>
+    </g>
+    <!-- App name and tagline -->
+    <g fill="#FFFFFF" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+        <text x="390" y="215" font-size="82" font-weight="bold">Plug Tracker</text>
+        <text x="392" y="285" font-size="46" opacity="0.9">Propagation</text>
+        <text x="392" y="370" font-size="33" opacity="0.8">Know what grows in every plug</text>
+    </g>
+</svg>
