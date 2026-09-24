@@ -1,15 +1,40 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
+# Gradle
+.gradle/
+build/
 /captures
+
+# Local configuration (SDK path etc.)
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetSelector.xml
+.idea/appInsightsSettings.xml
+.idea/deviceStreaming.xml
+
+# Build outputs copied by Android Studio's Build Bundle/APK dialogs
+app/release/
+app/debug/
+*.apk
+*.aab
+
+# Native build intermediates
 .externalNativeBuild
 .cxx
-local.properties
+
+# Kotlin session data
+.kotlin/
+
+# Release signing secrets — never commit these
+keystore.properties
+*.jks
+*.keystore
+
+# macOS
+.DS_Store

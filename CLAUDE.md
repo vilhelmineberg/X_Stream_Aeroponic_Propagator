@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Android app "X-Stream Aeroponic Propagator" — tracks which plant type sits in each plug of one or more aeroponic propagation boxes. Single module (`:app`), single Activity, Jetpack Compose UI, local Room database, no authentication or networking.
+Android app tracking which plant type sits in each plug of one or more aeroponic propagation boxes. The user-visible / Google Play name is "Plug Tracker – Propagation" (kept generic to avoid the X-Stream trademark); the repo, package name, and internal docs keep the original "X-Stream Aeroponic Propagator" working title. Single module (`:app`), single Activity, Jetpack Compose UI, local Room database, no authentication or networking.
 
 - Package/namespace: `se.vilhelmineberg.x_streamaeroponicpropagator`
 - AGP 9.4.1 with built-in Kotlin (2.3.21 embedded) — do NOT apply `org.jetbrains.kotlin.android`, it's a hard error under AGP 9. The Compose compiler plugin (`org.jetbrains.kotlin.plugin.compose`, versioned to match the embedded Kotlin) and KSP (standalone 2.3.x versioning) are applied on top.

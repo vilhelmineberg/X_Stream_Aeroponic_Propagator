@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import se.vilhelmineberg.x_streamaeroponicpropagator.data.BoxPreset
 import se.vilhelmineberg.x_streamaeroponicpropagator.data.Plant
@@ -172,6 +173,39 @@ fun PlugDetailDialog(
             }
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text("Close") } },
+    )
+}
+
+/** About dialog: app name, version and developer credit. */
+@Composable
+fun AboutDialog(onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val versionName = remember {
+        runCatching {
+            context.packageManager.getPackageInfo(context.packageName, 0).versionName
+        }.getOrNull() ?: "?"
+    }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text("Plug Tracker – Propagation") },
+        text = {
+            Column {
+                Text("Version $versionName")
+                Text("Developed by Mikael Hallin", modifier = Modifier.padding(top = 8.dp))
+                Text(
+                    "mikael@vilhelmineberg.se",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    "Keeps track of which plant grows in each plug of your propagation boxes. " +
+                        "All data is stored locally on this device.",
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = Modifier.padding(top = 8.dp),
+                )
+            }
+        },
+        confirmButton = { TextButton(onClick = onDismiss) { Text("Close") } },
     )
 }
 

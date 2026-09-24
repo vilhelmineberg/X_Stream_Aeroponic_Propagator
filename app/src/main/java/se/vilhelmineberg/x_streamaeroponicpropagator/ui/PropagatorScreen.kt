@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -75,6 +76,7 @@ fun PropagatorScreen(viewModel: PropagatorViewModel = viewModel()) {
     val selectedPositions by viewModel.selectedPositions.collectAsState()
 
     var showNewBoxDialog by remember { mutableStateOf(false) }
+    var showAboutDialog by remember { mutableStateOf(false) }
     var showDeleteBoxDialog by remember { mutableStateOf(false) }
     var showPlantDialog by remember { mutableStateOf(false) }
     var detailPlantId by remember { mutableStateOf<Long?>(null) }
@@ -98,6 +100,9 @@ fun PropagatorScreen(viewModel: PropagatorViewModel = viewModel()) {
                         IconButton(onClick = { showDeleteBoxDialog = true }) {
                             Icon(Icons.Default.Delete, contentDescription = "Delete box")
                         }
+                    }
+                    IconButton(onClick = { showAboutDialog = true }) {
+                        Icon(Icons.Default.Info, contentDescription = "About")
                     }
                 },
             )
@@ -133,6 +138,10 @@ fun PropagatorScreen(viewModel: PropagatorViewModel = viewModel()) {
                 modifier = Modifier.padding(padding),
             )
         }
+    }
+
+    if (showAboutDialog) {
+        AboutDialog(onDismiss = { showAboutDialog = false })
     }
 
     if (showNewBoxDialog) {
@@ -214,7 +223,7 @@ private fun BoxSelector(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.clickable(enabled = boxes.isNotEmpty()) { expanded = true },
     ) {
-        Text(selected?.name ?: "X-Stream Aeroponic Propagator", maxLines = 1)
+        Text(selected?.name ?: "Plug Tracker – Propagation", maxLines = 1)
         if (boxes.isNotEmpty()) {
             Icon(Icons.Default.ArrowDropDown, contentDescription = "Choose box")
         }
